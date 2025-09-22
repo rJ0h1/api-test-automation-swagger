@@ -1,0 +1,1188 @@
+openapi: 3.0.1
+info:
+  title: Tricentis Training CoffeeShop
+  version: Training
+servers:
+  - url: https://webservice.toscacloud.com
+paths:
+  /api/training/Coffees:
+    delete:
+      tags:
+        - Coffees
+      parameters:
+        - name: key
+          in: query
+          schema:
+            type: string
+          required: true
+        - name: id
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+      responses:
+        '200':
+          description: Success
+    post:
+      tags:
+        - Coffees
+      parameters:
+        - name: key
+          in: query
+          schema:
+            type: string
+          required: true
+        - name: Description
+          in: query
+          schema:
+            type: string
+        - name: Id
+          in: query
+          schema:
+            type: integer
+            format: int32
+        - name: Name
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Coffee'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Coffee'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Coffee'
+    put:
+      tags:
+        - Coffees
+      parameters:
+        - name: key
+          in: query
+          schema:
+            type: string
+          required: true
+        - name: Description
+          in: query
+          schema:
+            type: string
+        - name: Id
+          in: query
+          schema:
+            type: integer
+            format: int32
+        - name: Name
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Coffee'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Coffee'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Coffee'
+  /api/training/Coffees/{key}:
+    get:
+      tags:
+        - Coffees
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Coffee'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Coffee'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Coffee'
+  /api/training/Coffees/{key}/{id}:
+    get:
+      tags:
+        - Coffees
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Coffee'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Coffee'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Coffee'
+  /api/training/Data/add/{key}:
+    get:
+      tags:
+        - Data
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /api/training/Data/expiration/{key}:
+    get:
+      tags:
+        - Data
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  /Echo/{url}:
+    get:
+      tags:
+        - Echo
+      parameters:
+        - name: url
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: byte
+            application/json:
+              schema:
+                type: string
+                format: byte
+            text/json:
+              schema:
+                type: string
+                format: byte
+    post:
+      tags:
+        - Echo
+      parameters:
+        - name: url
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: byte
+            application/json:
+              schema:
+                type: string
+                format: byte
+            text/json:
+              schema:
+                type: string
+                format: byte
+    put:
+      tags:
+        - Echo
+      parameters:
+        - name: url
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: byte
+            application/json:
+              schema:
+                type: string
+                format: byte
+            text/json:
+              schema:
+                type: string
+                format: byte
+    delete:
+      tags:
+        - Echo
+      parameters:
+        - name: url
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: byte
+            application/json:
+              schema:
+                type: string
+                format: byte
+            text/json:
+              schema:
+                type: string
+                format: byte
+    patch:
+      tags:
+        - Echo
+      parameters:
+        - name: url
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: byte
+            application/json:
+              schema:
+                type: string
+                format: byte
+            text/json:
+              schema:
+                type: string
+                format: byte
+    options:
+      tags:
+        - Echo
+      parameters:
+        - name: url
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: byte
+            application/json:
+              schema:
+                type: string
+                format: byte
+            text/json:
+              schema:
+                type: string
+                format: byte
+    head:
+      tags:
+        - Echo
+      parameters:
+        - name: url
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: byte
+            application/json:
+              schema:
+                type: string
+                format: byte
+            text/json:
+              schema:
+                type: string
+                format: byte
+  /api/training/Employee/{key}:
+    get:
+      tags:
+        - Employee
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+    put:
+      tags:
+        - Employee
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+  /api/training/Employee/{key}/{id}:
+    get:
+      tags:
+        - Employee
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+  /api/training/Files/{key}:
+    delete:
+      tags:
+        - Files
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: query
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+    get:
+      tags:
+        - Files
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/File'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/File'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/File'
+    post:
+      tags:
+        - Files
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: Content
+          in: query
+          schema:
+            type: string
+            format: byte
+        - name: ContentType
+          in: query
+          schema:
+            type: string
+        - name: Id
+          in: query
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/File'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/File'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/File'
+    put:
+      tags:
+        - Files
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: Content
+          in: query
+          schema:
+            type: string
+            format: byte
+        - name: ContentType
+          in: query
+          schema:
+            type: string
+        - name: Id
+          in: query
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/File'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/File'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/File'
+  /api/training/Files/{key}/{id}:
+    get:
+      tags:
+        - Files
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/File'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/File'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/File'
+  /api/training/Profiles/{key}:
+    delete:
+      tags:
+        - Profiles
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: query
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+    get:
+      tags:
+        - Profiles
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Profile'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Profile'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Profile'
+    post:
+      tags:
+        - Profiles
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Profile'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Profile'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Profile'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Profile'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+    put:
+      tags:
+        - Profiles
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Profile'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Profile'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Profile'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Profile'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+  /api/training/Profiles/{key}/{id}:
+    get:
+      tags:
+        - Profiles
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Profile'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+  /api/training/Profiles/{key}/{id}/Photos:
+    get:
+      tags:
+        - Profiles
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Photo'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Photo'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Photo'
+  /api/training/SecuredEmployee:
+    get:
+      tags:
+        - SecuredEmployee
+      parameters:
+        - name: key
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+    put:
+      tags:
+        - SecuredEmployee
+      parameters:
+        - name: key
+          in: query
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+  /api/training/SecuredEmployee/{id}:
+    get:
+      tags:
+        - SecuredEmployee
+      parameters:
+        - name: key
+          in: query
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+  /api/training/Shops/{key}:
+    delete:
+      tags:
+        - Shops
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: query
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+    get:
+      tags:
+        - Shops
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Shop'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Shop'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Shop'
+    post:
+      tags:
+        - Shops
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Shop'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Shop'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Shop'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Shop'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+    put:
+      tags:
+        - Shops
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Shop'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Shop'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Shop'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Shop'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+  /api/training/Shops/{key}/{id}:
+    get:
+      tags:
+        - Shops
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Shop'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+  /api/training/Shops/{key}/{id}/coffees:
+    get:
+      tags:
+        - Shops
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Coffee'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Coffee'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Coffee'
+components:
+  schemas:
+    Address:
+      type: object
+      properties:
+        city:
+          type: string
+          nullable: true
+        country:
+          type: string
+          nullable: true
+        street:
+          type: string
+          nullable: true
+        zipCode:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Coffee:
+      type: object
+      properties:
+        description:
+          type: string
+          nullable: true
+        id:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 1000
+        name:
+          type: string
+          nullable: true
+          enum:
+            - Espresso
+            - Cappuccino
+            - Breve
+            - Bicerin
+            - Americano
+            - Arabica
+            - Affogato
+      additionalProperties: false
+    Comment:
+      type: object
+      properties:
+        content:
+          type: string
+          nullable: true
+        id:
+          type: integer
+          format: int32
+        profile:
+          $ref: '#/components/schemas/Profile'
+      additionalProperties: false
+    Employee:
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/Address'
+        firstName:
+          type: string
+          nullable: true
+        id:
+          type: integer
+          format: int32
+        lastName:
+          type: string
+          nullable: true
+      additionalProperties: false
+    File:
+      type: object
+      properties:
+        content:
+          type: string
+          format: byte
+          nullable: true
+        contentType:
+          type: string
+          nullable: true
+        id:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Photo:
+      type: object
+      properties:
+        comments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Comment'
+          nullable: true
+        content:
+          type: string
+          format: byte
+          nullable: true
+        contentType:
+          type: string
+          nullable: true
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Profile:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+          nullable: true
+        photos:
+          type: array
+          items:
+            $ref: '#/components/schemas/Photo'
+          nullable: true
+      additionalProperties: false
+    Shop:
+      type: object
+      properties:
+        city:
+          type: string
+          nullable: true
+        country:
+          type: string
+          nullable: true
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+          nullable: true
+      additionalProperties: false
