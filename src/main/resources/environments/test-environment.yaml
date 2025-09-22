@@ -1,0 +1,4 @@
+apis:
+  coffee-shop:
+    scheme: https://
+    baseUri: webservice.toscacloud.com/api/training
